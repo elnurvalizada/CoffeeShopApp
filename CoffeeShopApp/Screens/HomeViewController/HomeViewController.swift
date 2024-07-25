@@ -10,6 +10,7 @@ class HomeViewController: UIViewController {
 
     private let scrollView: UIScrollView = {
         let sv = UIScrollView()
+        sv.showsVerticalScrollIndicator = false
         return sv
     }()
 

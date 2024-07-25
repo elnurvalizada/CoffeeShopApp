@@ -74,7 +74,7 @@ class LoginViewController: UIViewController {
     
     let haveAccountLabel : UILabel = {
         let label = UILabel()
-        label.textColor = .black.withAlphaComponent(0.5)
+        label.textColor = .espressoBrown.withAlphaComponent(0.5)
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.text = "Don’t have an account?"
         label.textAlignment = .center
@@ -159,12 +159,14 @@ class LoginViewController: UIViewController {
                 case .invalidEmail:
                     self.showAlert(title: "Validation Failed", message: error.localizedDescription)
                 default:
-                    print("Error: \(error.localizedDescription)")
+                    self.showAlert(title: "General Error", message: error.localizedDescription)
                 }
             } else {
                 print("User signs in successfully")
+                let tabbarVC = TabBarController()
+                tabbarVC.modalPresentationStyle = .fullScreen
+                self.navigationController?.present(tabbarVC, animated: false)
                 let userInfo = Auth.auth().currentUser
-                print(userInfo)
             }
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DrinksCollectionViewCell: UICollectionViewCell {
     
@@ -67,13 +68,9 @@ class DrinksCollectionViewCell: UICollectionViewCell {
 
 
 extension DrinksCollectionViewCell {
-    struct Model {
-        let img : String
-        let label : String
-    }
     
-    func config(item : Model) {
-        centerImg.image = UIImage(named: item.img)
-        centerlabel.text = item.label
+    func config(item : CoffeeModel) {
+        centerImg.kf.setImage(with: URL(string: item.imgURL))
+        centerlabel.text = item.name
     }
 }

@@ -69,7 +69,7 @@ class CoffeeBeansCell: UICollectionViewCell {
 
 extension CoffeeBeansCell {
     
-    func config(item : CoffeeModel) {
+    func config(item : CoffeeBeansModel) {
         let url = URL(string: item.image_url)
         centerImg.kf.setImage(with: url)
         centerlabel.text = item.name

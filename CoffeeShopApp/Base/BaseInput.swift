@@ -53,6 +53,11 @@ class BaseInput : UIView {
     
     let inputTextField : UITextField = {
         let tf = UITextField()
+        tf.attributedPlaceholder = NSAttributedString(
+            string: "Placeholder Text",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.button]
+        )
+        tf.textColor = .button
         return tf
     }()
     

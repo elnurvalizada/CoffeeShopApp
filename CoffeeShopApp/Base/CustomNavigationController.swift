@@ -58,8 +58,8 @@ class CustomNavigationController: UINavigationController {
         standard.configureWithOpaqueBackground()
         
         
-        navigationBar.tintColor = .black
-        navigationBar.backgroundColor = .mainBackground
+        navigationBar.tintColor = .espressoBrown
+        navigationBar.backgroundColor = .mainBackground.withAlphaComponent(0.95)
         navigationBar.standardAppearance = standard
         navigationBar.layer.shadowColor = UIColor.black.cgColor
         navigationBar.layer.shadowOffset = CGSize(width: 0, height: 4)
@@ -78,7 +78,6 @@ class CustomNavigationController: UINavigationController {
     
     @objc private func didTapRightButton() {
         let nextVC = BucketViewController()
-        nextVC.modalPresentationStyle = .popover
         self.present(nextVC, animated: true)
     }
     

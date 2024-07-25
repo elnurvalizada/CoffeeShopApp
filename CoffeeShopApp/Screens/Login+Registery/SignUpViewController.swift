@@ -83,7 +83,7 @@ class SignUpViewController: UIViewController {
     
     let haveAccountLabel : UILabel = {
         let label = UILabel()
-        label.textColor = .black.withAlphaComponent(0.5)
+        label.textColor = .espressoBrown.withAlphaComponent(0.5)
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.text = "Already have an account?"
         label.textAlignment = .center
@@ -181,8 +181,6 @@ class SignUpViewController: UIViewController {
             let nextVc = OnboardingViewController()
             self?.navigationController?.pushViewController(nextVc, animated: false)
             let newUserInfo = Auth.auth().currentUser
-            print(newUserInfo?.email)
-            print(newUserInfo?.uid)
             
             if let userId = newUserInfo?.uid {
                 let db = Firestore.firestore()

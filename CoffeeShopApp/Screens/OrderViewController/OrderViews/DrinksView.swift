@@ -10,19 +10,13 @@ import UIKit
 
 class DrinksView : UIView {
     
-    var onDrinkSelected: ((DrinksCollectionViewCell.Model) -> Void)?
+    var onDrinkSelected: ((CoffeeModel) -> Void)?
     
-    let list : [DrinksCollectionViewCell.Model] = [
-        .init(img: "Frap", label: "Frappucino"),
-        .init(img: "IceCof", label: "Ice Americano"),
-        .init(img: "HotChoc", label: "Hot Chocolate"),
-        .init(img: "Frap", label: "Frappucino"),
-        .init(img: "IceCof", label: "Ice Americano"),
-        .init(img: "HotChoc", label: "Hot Chocolate"),
-        .init(img: "Frap", label: "Frappucino"),
-        .init(img: "IceCof", label: "Ice Americano"),
-        .init(img: "HotChoc", label: "Hot Chocolate")
-    ]
+    var coffeeList : [CoffeeModel] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     let viewStack : UIStackView = {
         let sv = UIStackView()
@@ -78,6 +72,10 @@ class DrinksView : UIView {
         collectionView.dataSource = self
         collectionView.delegate = self
         seeAllButton.addTarget(self, action: #selector(didTapSeeAllButton), for: .touchUpInside)
+        
+        CoffeeManager.shared.fetchAllCoffees { list in
+            self.coffeeList = list
+        }
     }
     
     private func setupView() {
@@ -115,16 +113,16 @@ class DrinksView : UIView {
 
 extension DrinksView : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        list.count
+        coffeeList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DrinksCollectionViewCell.identifer, for: indexPath) as! DrinksCollectionViewCell
-        cell.config(item: list[indexPath.row])
+        cell.config(item: coffeeList[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        onDrinkSelected?(list[indexPath.row])
+        onDrinkSelected?(coffeeList[indexPath.row])
     }
 }

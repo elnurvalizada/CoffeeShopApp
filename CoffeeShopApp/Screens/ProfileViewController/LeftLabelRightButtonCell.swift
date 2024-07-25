@@ -9,7 +9,7 @@ import UIKit
 
 
 class LeftLabelRightButtonCell : UITableViewCell {
-    
+    var delegate : (() -> ())?
     private let mainStack : UIStackView = {
         let sv = UIStackView()
         sv.axis = .horizontal
@@ -42,6 +42,7 @@ class LeftLabelRightButtonCell : UITableViewCell {
             make.top.bottom.equalToSuperview().inset(14)
             make.leading.trailing.equalToSuperview().inset(20)
         }
+        rightButton.addTarget(self, action: #selector(didTapRightButton), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -50,5 +51,10 @@ class LeftLabelRightButtonCell : UITableViewCell {
     
     func config(title : String) {
         leftLabel.text = title
+    }
+    
+    @objc
+    private func didTapRightButton() {
+        delegate?()
     }
 }

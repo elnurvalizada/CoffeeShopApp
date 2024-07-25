@@ -9,8 +9,8 @@ import Foundation
 
 
 final class NetworkManager {
-    func fetchProducts(completion: @escaping ([CoffeeModel]) -> Void) {
-        URLSession.shared.fetch(url: "https://fake-coffee-api.vercel.app/api", expecting: [CoffeeModel].self) { (result: Result<[CoffeeModel], Error>) in
+    func fetchProducts(completion: @escaping ([CoffeeBeansModel]) -> Void) {
+        URLSession.shared.fetch(url: "https://fake-coffee-api.vercel.app/api", expecting: [CoffeeBeansModel].self) { (result: Result<[CoffeeBeansModel], Error>) in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {

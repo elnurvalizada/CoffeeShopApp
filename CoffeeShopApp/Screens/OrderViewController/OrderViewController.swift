@@ -53,7 +53,7 @@ class OrderViewController : UIViewController {
         
         drinksView.onDrinkSelected = { item in
             let nextVC = OrderCoffeeDetailViewController()
-            
+            nextVC.config(item: item)
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
         coffeeBeansView.onDrinkSelected = { item in

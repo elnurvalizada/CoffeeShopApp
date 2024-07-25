@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import LocalAuthentication
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
@@ -54,6 +56,8 @@ class ProfileViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let biometricManager = BiometricAuthManager.shared
     }
 
 }
@@ -103,6 +107,11 @@ extension ProfileViewController : UITableViewDataSource {
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: LeftLabelRightButtonCell.identifer, for: indexPath) as! LeftLabelRightButtonCell
             cell.config(title: securityList[indexPath.row])
+            if indexPath.row == 1 {
+                cell.delegate = {
+                    
+                }
+            }
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: LeftLabelRightButtonCell.identifer, for: indexPath) as! LeftLabelRightButtonCell
@@ -125,7 +134,6 @@ extension ProfileViewController : UITableViewDelegate {
         let headerView = UIView()
         let headerLabel = UILabel()
         headerLabel.font = .systemFont(ofSize: 20, weight: .bold)
-        headerLabel.textColor = .black
         
         headerView.addSubview(headerLabel)
         headerLabel.snp.makeConstraints { make in
@@ -148,4 +156,9 @@ extension ProfileViewController : UITableViewDelegate {
         return headerView
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 4 {
+            try! Auth.auth().signOut()
+        }
+    }
 }

@@ -11,7 +11,7 @@ class BucketViewController: UIViewController {
     
     private let emptyView : BaseShadowView = {
         let view = BaseShadowView()
-        view.backgroundColor = .white
+        view.backgroundColor = .registerBaseBGcolor
         return view
     }()
 
@@ -27,6 +27,7 @@ class BucketViewController: UIViewController {
     private let centerLogo : UIImageView = {
         let img = UIImageView()
         img.image = UIImage.emptyIcon
+        img.tintColor = .espressoBrown
         return img
     }()
     
@@ -34,13 +35,14 @@ class BucketViewController: UIViewController {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .medium)
         label.text = "No item in your cart"
+        label.textColor = .espressoBrown
         return label
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .mainBackground
-        
+        self.navigationController?.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(didTapBackButton))
         setupUI()
         setupConstraints()
     }
@@ -71,4 +73,8 @@ class BucketViewController: UIViewController {
         }
     }
 
+    @objc
+    private func didTapBackButton() {
+        dismiss(animated: true)
+    }
 }

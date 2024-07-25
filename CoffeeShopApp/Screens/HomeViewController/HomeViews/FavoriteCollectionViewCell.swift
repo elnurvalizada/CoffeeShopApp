@@ -6,9 +6,16 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FavoriteCollectionViewCell: UICollectionViewCell {
     
+    let favIcon : UIImageView = {
+        let img = UIImageView()
+        img.image = UIImage(systemName: "heart.fill")
+        img.tintColor = .red
+        return img
+    }()
     
     let centerStack : UIStackView = {
         let sv = UIStackView()
@@ -26,7 +33,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     
     let centerlabel : UILabel = {
         let label = UILabel()
-        
+        label.textColor = .button
         return label
     }()
     
@@ -34,13 +41,17 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupShadow()
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .subviewbackground
         contentView.addSubview(centerStack)
+        contentView.addSubview(favIcon)
         
         
         centerStack.addArrangedSubview(centerImg)
         centerStack.addArrangedSubview(centerlabel)
         
+        favIcon.snp.makeConstraints { make in
+            make.top.trailing.equalToSuperview().inset(8)
+        }
         
         centerStack.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(12)
@@ -67,14 +78,9 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
 
 
 extension FavoriteCollectionViewCell {
-    struct Model {
-        let img : String
-        let label : String
-        let isFavorite : Bool
-    }
     
-    func config(item : Model) {
-        centerImg.image = UIImage(named: item.img)
-        centerlabel.text = item.label
+    func config(item : CoffeeModel) {
+        centerImg.kf.setImage(with: URL(string: item.imgURL))
+        centerlabel.text = item.name
     }
 }

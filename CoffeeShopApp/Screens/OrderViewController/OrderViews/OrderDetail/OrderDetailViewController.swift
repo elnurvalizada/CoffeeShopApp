@@ -230,8 +230,10 @@ class OrderCoffeeDetailViewController : UIViewController {
         makeFavoriteButton.tintColor = isFavorite ? .red : .button
         if isFavorite {
             Firestore.firestore().collection("FavoriteCoffee").document(id).setData(["id" : id, "name" : rightLabel.text ?? "", "imgURL" : imgURL, "price" : price])
+            Firestore.firestore().collection("Coffee").document(id).updateData(["isFavorite" : true])
         } else {
             Firestore.firestore().collection("FavoriteCoffee").document(id).delete()
+            Firestore.firestore().collection("Coffee").document(id).updateData(["isFavorite" : false])
         }
     }
 }
@@ -240,6 +242,7 @@ class OrderCoffeeDetailViewController : UIViewController {
 extension OrderCoffeeDetailViewController {
     func config(item : CoffeeModel) {
         id = item.id
+        isFavorite = item.isFavorite
         imgURL = item.imgURL
         let url = URL(string: item.imgURL)
         leftIcon.kf.setImage(with: url)

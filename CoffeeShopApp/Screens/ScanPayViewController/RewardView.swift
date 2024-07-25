@@ -58,8 +58,8 @@ class RewardView : UIView {
                 let colorFilter = CIFilter(name: "CIFalseColor")
                 colorFilter?.setDefaults()
                 colorFilter?.setValue(outputImage, forKey: "inputImage")
-                colorFilter?.setValue(CIColor(color: .black), forKey: "inputColor0") // QR code color
-                colorFilter?.setValue(CIColor(color: .clear), forKey: "inputColor1") // Background color
+                colorFilter?.setValue(CIColor(color: .button), forKey: "inputColor0")
+                colorFilter?.setValue(CIColor(color: .clear), forKey: "inputColor1") 
                 
                 if let coloredOutput = colorFilter?.outputImage {
                     let transform = CGAffineTransform(scaleX: 10, y: 10)

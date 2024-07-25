@@ -31,6 +31,8 @@
 		862E7F2C2C1C5B63009B7989 /* ScanPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862E7F2B2C1C5B63009B7989 /* ScanPayView.swift */; };
 		862E7F2E2C1C5C22009B7989 /* ScanPayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862E7F2D2C1C5C22009B7989 /* ScanPayCollectionViewCell.swift */; };
 		865BD45D2C245874005C3FA9 /* RewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865BD45C2C245874005C3FA9 /* RewardView.swift */; };
+		8666A2822C526887006DA056 /* CoffeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8666A2812C526887006DA056 /* CoffeeManager.swift */; };
+		8666A2842C52690E006DA056 /* CoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8666A2832C52690E006DA056 /* CoffeeModel.swift */; };
 		867EBCD72C09BA4F0013EFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EBCD62C09BA4F0013EFE9 /* AppDelegate.swift */; };
 		867EBCD92C09BA4F0013EFE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EBCD82C09BA4F0013EFE9 /* SceneDelegate.swift */; };
 		867EBCDB2C09BA4F0013EFE9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EBCDA2C09BA4F0013EFE9 /* SignUpViewController.swift */; };
@@ -78,11 +80,12 @@
 		869E26AF2C45A7BE0012CAC3 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E26AE2C45A7BE0012CAC3 /* UIViewController+Ext.swift */; };
 		869E87272C0CB1E400EF219B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E87262C0CB1E400EF219B /* TabBarController.swift */; };
 		869E872A2C0CB33900EF219B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E87292C0CB33900EF219B /* HomeViewController.swift */; };
+		86A6FC032C511CD600C2990F /* BiometricAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A6FC022C511CD600C2990F /* BiometricAuthManager.swift */; };
 		86C64DE62C44F39D00FF08D3 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C64DE52C44F39D00FF08D3 /* OrderDetailViewController.swift */; };
 		86C64DE82C44F43F00FF08D3 /* OrderSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C64DE72C44F43F00FF08D3 /* OrderSelectView.swift */; };
 		86C64DEB2C455C0800FF08D3 /* BucketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C64DEA2C455C0800FF08D3 /* BucketViewController.swift */; };
 		86D605C62C47019200C9C579 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D605C52C47019200C9C579 /* NetworkManager.swift */; };
-		86D605C92C47022000C9C579 /* CoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D605C82C47022000C9C579 /* CoffeeModel.swift */; };
+		86D605C92C47022000C9C579 /* CoffeeBeansModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D605C82C47022000C9C579 /* CoffeeBeansModel.swift */; };
 		86D605CB2C47032900C9C579 /* CoffeeBeansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D605CA2C47032900C9C579 /* CoffeeBeansView.swift */; };
 		86D605CD2C4704A900C9C579 /* CoffeeBeansCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D605CC2C4704A900C9C579 /* CoffeeBeansCell.swift */; };
 		AFBEFFF2A894F1CB2621644A /* Pods_CoffeeShopAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FF64F13DC0B0CC8EEF1151 /* Pods_CoffeeShopAppTests.framework */; };
@@ -132,6 +135,8 @@
 		862E7F2B2C1C5B63009B7989 /* ScanPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPayView.swift; sourceTree = "<group>"; };
 		862E7F2D2C1C5C22009B7989 /* ScanPayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPayCollectionViewCell.swift; sourceTree = "<group>"; };
 		865BD45C2C245874005C3FA9 /* RewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardView.swift; sourceTree = "<group>"; };
+		8666A2812C526887006DA056 /* CoffeeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeManager.swift; sourceTree = "<group>"; };
+		8666A2832C52690E006DA056 /* CoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeModel.swift; sourceTree = "<group>"; };
 		867EBCD32C09BA4F0013EFE9 /* CoffeeShopApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeShopApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		867EBCD62C09BA4F0013EFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		867EBCD82C09BA4F0013EFE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,11 +160,12 @@
 		869E26AE2C45A7BE0012CAC3 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		869E87262C0CB1E400EF219B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		869E87292C0CB33900EF219B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		86A6FC022C511CD600C2990F /* BiometricAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthManager.swift; sourceTree = "<group>"; };
 		86C64DE52C44F39D00FF08D3 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		86C64DE72C44F43F00FF08D3 /* OrderSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSelectView.swift; sourceTree = "<group>"; };
 		86C64DEA2C455C0800FF08D3 /* BucketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketViewController.swift; sourceTree = "<group>"; };
 		86D605C52C47019200C9C579 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		86D605C82C47022000C9C579 /* CoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeModel.swift; sourceTree = "<group>"; };
+		86D605C82C47022000C9C579 /* CoffeeBeansModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeansModel.swift; sourceTree = "<group>"; };
 		86D605CA2C47032900C9C579 /* CoffeeBeansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeansView.swift; sourceTree = "<group>"; };
 		86D605CC2C4704A900C9C579 /* CoffeeBeansCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeansCell.swift; sourceTree = "<group>"; };
 		8D2685C65AF27F5CD5D8CECA /* Pods-CoffeeShopApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeShopApp.release.xcconfig"; path = "Target Support Files/Pods-CoffeeShopApp/Pods-CoffeeShopApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -237,6 +243,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		860A8E0B2C48FBA100E5A962 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				869E87262C0CB1E400EF219B /* TabBarController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		860A8E0C2C48FBBE00E5A962 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				86D605C52C47019200C9C579 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		8612173B2C47F5D30001BE7D /* PasscodeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,11 +293,9 @@
 		861809F92C1ACC6A009AEF08 /* OrderViews */ = {
 			isa = PBXGroup;
 			children = (
+				8666A2852C528181006DA056 /* OrderDetail */,
 				861809FC2C1AD4A4009AEF08 /* DrinksView.swift */,
 				861809FE2C1AD4DD009AEF08 /* DrinksCollectionViewCell.swift */,
-				861217392C47F27C0001BE7D /* OrderCoffeeBeansDetailViewController.swift */,
-				86C64DE52C44F39D00FF08D3 /* OrderDetailViewController.swift */,
-				86C64DE72C44F43F00FF08D3 /* OrderSelectView.swift */,
 				86D605CA2C47032900C9C579 /* CoffeeBeansView.swift */,
 				86D605CC2C4704A900C9C579 /* CoffeeBeansCell.swift */,
 			);
@@ -322,6 +342,16 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
+		8666A2852C528181006DA056 /* OrderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				86C64DE72C44F43F00FF08D3 /* OrderSelectView.swift */,
+				86C64DE52C44F39D00FF08D3 /* OrderDetailViewController.swift */,
+				861217392C47F27C0001BE7D /* OrderCoffeeBeansDetailViewController.swift */,
+			);
+			path = OrderDetail;
+			sourceTree = "<group>";
+		};
 		867EBCCA2C09BA4F0013EFE9 = {
 			isa = PBXGroup;
 			children = (
@@ -347,17 +377,18 @@
 		867EBCD52C09BA4F0013EFE9 /* CoffeeShopApp */ = {
 			isa = PBXGroup;
 			children = (
-				86D605C72C47020F00C9C579 /* Model */,
 				869E26732C45A16F0012CAC3 /* GoogleService-Info.plist */,
 				865F4C5E2C10F6D6007EF44D /* Extension */,
+				86A6FC012C511CC000C2990F /* Manager */,
+				860A8E0C2C48FBBE00E5A962 /* Network */,
 				867EBD062C09C0E20013EFE9 /* Base */,
+				86D605C72C47020F00C9C579 /* Model */,
 				867EBD112C0A31C80013EFE9 /* Screens */,
 				867EBCD62C09BA4F0013EFE9 /* AppDelegate.swift */,
 				867EBCD82C09BA4F0013EFE9 /* SceneDelegate.swift */,
 				867EBCDF2C09BA510013EFE9 /* Assets.xcassets */,
 				867EBCE12C09BA510013EFE9 /* LaunchScreen.storyboard */,
 				867EBCE42C09BA510013EFE9 /* Info.plist */,
-				86D605C52C47019200C9C579 /* NetworkManager.swift */,
 			);
 			path = CoffeeShopApp;
 			sourceTree = "<group>";
@@ -393,6 +424,7 @@
 		867EBD112C0A31C80013EFE9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				860A8E0B2C48FBA100E5A962 /* Tabbar */,
 				8612173B2C47F5D30001BE7D /* PasscodeViewController */,
 				86C64DE92C455BED00FF08D3 /* BucketViewController */,
 				862420432C2D7B6100CB10B3 /* ProfileViewController */,
@@ -401,7 +433,6 @@
 				869E87282C0CB32300EF219B /* HomeViewController */,
 				867EBD192C0A48800013EFE9 /* Model */,
 				867EBD182C0A48600013EFE9 /* Login+Registery */,
-				869E87262C0CB1E400EF219B /* TabBarController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -434,6 +465,15 @@
 			path = HomeViewController;
 			sourceTree = "<group>";
 		};
+		86A6FC012C511CC000C2990F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				86A6FC022C511CD600C2990F /* BiometricAuthManager.swift */,
+				8666A2812C526887006DA056 /* CoffeeManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		86C64DE92C455BED00FF08D3 /* BucketViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,7 +485,8 @@
 		86D605C72C47020F00C9C579 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				86D605C82C47022000C9C579 /* CoffeeModel.swift */,
+				86D605C82C47022000C9C579 /* CoffeeBeansModel.swift */,
+				8666A2832C52690E006DA056 /* CoffeeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -739,15 +780,17 @@
 				867EBD102C0A2E020013EFE9 /* LoginViewController.swift in Sources */,
 				86C64DE62C44F39D00FF08D3 /* OrderDetailViewController.swift in Sources */,
 				869E26AF2C45A7BE0012CAC3 /* UIViewController+Ext.swift in Sources */,
-				86D605C92C47022000C9C579 /* CoffeeModel.swift in Sources */,
+				86D605C92C47022000C9C579 /* CoffeeBeansModel.swift in Sources */,
 				861809F12C1AC0A1009AEF08 /* FavoriteView.swift in Sources */,
 				8612173F2C47F6020001BE7D /* Passcode.swift in Sources */,
 				867EBCDB2C09BA4F0013EFE9 /* SignUpViewController.swift in Sources */,
 				861809FB2C1AD0CA009AEF08 /* OrderTableViewCell.swift in Sources */,
 				862E7F292C1C5392009B7989 /* ScanPayViewController.swift in Sources */,
 				869E87272C0CB1E400EF219B /* TabBarController.swift in Sources */,
+				8666A2842C52690E006DA056 /* CoffeeModel.swift in Sources */,
 				861809F32C1AC29F009AEF08 /* FavoriteCollectionViewCell.swift in Sources */,
 				862420472C2D7CB200CB10B3 /* ProfileHeaderCell.swift in Sources */,
+				8666A2822C526887006DA056 /* CoffeeManager.swift in Sources */,
 				861217412C47F6500001BE7D /* Pin.swift in Sources */,
 				8612173A2C47F27C0001BE7D /* OrderCoffeeBeansDetailViewController.swift in Sources */,
 				867EBCD72C09BA4F0013EFE9 /* AppDelegate.swift in Sources */,
@@ -760,6 +803,7 @@
 				8624204B2C2D8B6000CB10B3 /* LeftLabelRightButtonCell.swift in Sources */,
 				861809FF2C1AD4DD009AEF08 /* DrinksCollectionViewCell.swift in Sources */,
 				867EBD152C0A33170013EFE9 /* OnboardingModel.swift in Sources */,
+				86A6FC032C511CD600C2990F /* BiometricAuthManager.swift in Sources */,
 				862E7F2C2C1C5B63009B7989 /* ScanPayView.swift in Sources */,
 				867EBD0E2C0A2D4F0013EFE9 /* BaseShadowView.swift in Sources */,
 				867EBD172C0A34230013EFE9 /* OnboardingCollectionViewCell.swift in Sources */,

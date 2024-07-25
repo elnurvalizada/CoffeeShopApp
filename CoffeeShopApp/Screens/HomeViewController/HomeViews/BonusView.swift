@@ -57,6 +57,7 @@ class BonusView : BaseShadowView {
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         label.text = "Order 2 bags of coffee and get bonus stars!"
         label.numberOfLines = 0
+        label.textColor = .button
         return label
     }()
 
@@ -64,6 +65,7 @@ class BonusView : BaseShadowView {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.text = "Order any of our coffee and get an additional 30 Stars! Now that’s how you get free coffee!"
+        label.textColor = .button
         label.numberOfLines = 0
         return label
     }()
@@ -83,7 +85,7 @@ class BonusView : BaseShadowView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = .subviewbackground
         setupViews()
         setupConstraints()
     }

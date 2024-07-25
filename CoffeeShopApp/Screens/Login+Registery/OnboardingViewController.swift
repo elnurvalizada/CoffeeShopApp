@@ -48,6 +48,7 @@ class OnboardingViewController: UIViewController {
         let button = BaseButton()
         button.setTitle("Go on", for: .normal)
         button.layer.cornerRadius = 14
+        button.backgroundColor = .espressoBrown
         return button
     }()
     

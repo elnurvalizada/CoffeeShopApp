@@ -137,14 +137,14 @@ class ScanPayViewController: UIViewController {
         scanPayView.snp.makeConstraints { make in
             make.top.equalTo(topStack.snp.bottom).offset(55)
             make.leading.trailing.equalTo(scrollView)
-            make.width.equalTo(scrollView.snp.width) // Maintain the width of scrollView
+            make.width.equalTo(scrollView.snp.width)
         }
         
         rewardView.snp.makeConstraints { make in
             make.top.equalTo(scanPayView.snp.bottom).offset(20)
             make.leading.trailing.equalTo(scrollView)
-            make.width.equalTo(scrollView.snp.width) // Maintain the width of scrollView
-            make.bottom.equalTo(scrollView.snp.bottom).offset(-20) // Important to define the bottom constraint
+            make.width.equalTo(scrollView.snp.width)
+            make.bottom.equalTo(scrollView.snp.bottom).offset(-20)
         }
     }
     

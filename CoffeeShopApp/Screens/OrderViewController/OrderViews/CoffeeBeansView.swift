@@ -11,9 +11,9 @@ import UIKit
 
 class CoffeeBeansView : UIView {
     
-    var onDrinkSelected: ((CoffeeModel) -> Void)?
+    var onDrinkSelected: ((CoffeeBeansModel) -> Void)?
     
-    var list : [CoffeeModel] = [ ]
+    var list : [CoffeeBeansModel] = [ ]
     
     let viewStack : UIStackView = {
         let sv = UIStackView()

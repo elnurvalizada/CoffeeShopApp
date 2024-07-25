@@ -10,17 +10,12 @@ import UIKit
 
 class FavoriteView : UIView {
     
-    let list : [FavoriteCollectionViewCell.Model] = [
-        .init(img: "Frap", label: "Frappucino", isFavorite: true),
-        .init(img: "IceCof", label: "Ice Americano", isFavorite: true),
-        .init(img: "HotChoc", label: "Hot Chocolate", isFavorite: true),
-        .init(img: "Frap", label: "Frappucino", isFavorite: true),
-        .init(img: "IceCof", label: "Ice Americano", isFavorite: true),
-        .init(img: "HotChoc", label: "Hot Chocolate", isFavorite: true),
-        .init(img: "Frap", label: "Frappucino", isFavorite: true),
-        .init(img: "IceCof", label: "Ice Americano", isFavorite: true),
-        .init(img: "HotChoc", label: "Hot Chocolate", isFavorite: true)
-    ]
+    var coffeeList : [CoffeeModel] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     let viewStack : UIStackView = {
         let sv = UIStackView()
         sv.axis = .vertical
@@ -57,6 +52,10 @@ class FavoriteView : UIView {
         setupContraints()
         
         collectionView.dataSource = self
+        CoffeeManager.shared.fetchFavCoffees { list in
+            self.coffeeList = list
+        }
+        listenToCoffeeUpdates()
     }
     
     private func setupView() {
@@ -81,18 +80,23 @@ class FavoriteView : UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private func listenToCoffeeUpdates() {
+        CoffeeManager.shared.listenToCoffeeUpdates { list in
+            self.coffeeList = list
+        }
+    }
 }
 
 
 extension FavoriteView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        list.count
+        coffeeList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoriteCollectionViewCell.identifer, for: indexPath) as! FavoriteCollectionViewCell
-        cell.config(item: list[indexPath.row])
-        
+        cell.config(item: coffeeList[indexPath.row])
         return cell
     }
 }

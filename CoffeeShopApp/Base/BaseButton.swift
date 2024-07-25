@@ -15,7 +15,7 @@ class BaseButton : UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setTitle("button", for: .application)
-        backgroundColor = .espressoBrown
+        backgroundColor = .button
         layer.cornerRadius = 16
         
         snp.makeConstraints { make in
