@@ -7,8 +7,13 @@
 
 import UIKit
 import Kingfisher
+import Firebase
 
 class OrderCoffeeDetailViewController : UIViewController {
+    var id : String = ""
+    var isFavorite : Bool = false
+    var imgURL : String = ""
+    var price : Double = 0
     
     private let orderList : [OrderSelectView.Model] = [
         .init(header: "Cup Size", text: "Large", isStepper: false, pickerData: ["Large", "Medium", "Small"]),
@@ -28,6 +33,27 @@ class OrderCoffeeDetailViewController : UIViewController {
         sv.axis = .horizontal
         sv.alignment = .center
         return sv
+    }()
+    
+    private let backButton : UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.tintColor = UIColor.button
+        button.imageView?.snp.makeConstraints({ make in
+            make.height.equalTo(25)
+            make.width.equalTo(15)
+        })
+        return button
+    }()
+    
+    private let makeFavoriteButton : UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        button.tintColor = UIColor.button
+        button.imageView?.snp.makeConstraints({ make in
+            make.size.equalTo(26)
+        })
+        return button
     }()
     
     private let leftIcon : UIImageView = {
@@ -114,6 +140,9 @@ class OrderCoffeeDetailViewController : UIViewController {
         view.backgroundColor = .mainBackground
         setupUI()
         setupConstraints()
+        
+        backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+        makeFavoriteButton.addTarget(self, action: #selector(didTapFavButton), for: .touchUpInside)
     }
     
     
@@ -123,6 +152,8 @@ class OrderCoffeeDetailViewController : UIViewController {
         view.addSubview(mainScrollView)
         
         topView.addSubview(topStack)
+        topView.addSubview(backButton)
+        topView.addSubview(makeFavoriteButton)
         
         topStack.addArrangedSubview(leftIcon)
         topStack.addArrangedSubview(rightLabel)
@@ -138,6 +169,11 @@ class OrderCoffeeDetailViewController : UIViewController {
             addToCardButton,
             emptyView
         ].forEach(centerStack.addArrangedSubview)
+        
+        if isFavorite {
+            makeFavoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            makeFavoriteButton.tintColor = .red
+        }
     }
     
     private func setupConstraints() {
@@ -149,8 +185,17 @@ class OrderCoffeeDetailViewController : UIViewController {
             make.leading.trailing.equalToSuperview().inset(16)
             make.top.bottom.equalToSuperview().inset(15)
         }
+        
+        backButton.snp.makeConstraints { make in
+            make.top.leading.equalToSuperview().inset(8)
+        }
+        
+        makeFavoriteButton.snp.makeConstraints { make in
+            make.top.trailing.equalToSuperview().inset(8)
+        }
+        
         leftIcon.snp.makeConstraints { make in
-            make.height.equalTo(100)
+            make.height.equalTo(400)
             make.width.equalTo(150)
         }
         headerLabel.snp.makeConstraints { make in
@@ -171,5 +216,35 @@ class OrderCoffeeDetailViewController : UIViewController {
         }
         
         
+    }
+    
+    @objc
+    private func didTapBackButton() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc
+    private func didTapFavButton() {
+        isFavorite.toggle()
+        makeFavoriteButton.setImage(UIImage(systemName: isFavorite ? "heart.fill" : "heart"), for: .normal)
+        makeFavoriteButton.tintColor = isFavorite ? .red : .button
+        if isFavorite {
+            Firestore.firestore().collection("FavoriteCoffee").document(id).setData(["id" : id, "name" : rightLabel.text ?? "", "imgURL" : imgURL, "price" : price])
+        } else {
+            Firestore.firestore().collection("FavoriteCoffee").document(id).delete()
+        }
+    }
+}
+
+
+extension OrderCoffeeDetailViewController {
+    func config(item : CoffeeModel) {
+        id = item.id
+        imgURL = item.imgURL
+        let url = URL(string: item.imgURL)
+        leftIcon.kf.setImage(with: url)
+        rightLabel.text = item.name
+        price = item.price
+        addToCardButton.setTitle("Add to Cart $ \(price)", for: .normal)
     }
 }

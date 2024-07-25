@@ -1,5 +1,5 @@
 //
-//  CoffeeModel.swift
+//  CoffeeManager.swift
 //  CoffeeShopApp
 //
 //  Created by Elnur Valizada on 25.07.24.

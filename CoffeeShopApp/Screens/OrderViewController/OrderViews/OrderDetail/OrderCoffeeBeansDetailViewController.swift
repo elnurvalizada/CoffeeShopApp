@@ -151,7 +151,7 @@ class OrderCoffeeBeansDetailViewController : UIViewController {
 }
 
 extension OrderCoffeeBeansDetailViewController {
-    func config(item : CoffeeModel) {
+    func config(item : CoffeeBeansModel) {
         let url = URL(string: item.image_url)
         leftIcon.kf.setImage(with: url)
         rightLabel.text = item.name
